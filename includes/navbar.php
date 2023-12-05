@@ -27,12 +27,6 @@
               </li>
               
             </ul>
-
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item cta-btn">
-                <a class="btn btn-primary"href="../Pages/register.html">Register</a>
-              </li>
-            </ul>
             
           </div>
         </div>

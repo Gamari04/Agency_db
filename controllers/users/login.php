@@ -1,4 +1,9 @@
 <?php
+
+require __DIR__ .'/../../config/connection.php';
+include (__DIR__ .'/../../models/users.php') ;
+include('../../views/login.php');
+
 if (isset($_POST["login"])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
@@ -6,12 +11,11 @@ if (isset($_POST["login"])) {
     $user = login($email, $password, $connexion);
 
     if ($user) {
-        // Authentification réussie
-        // Rediriger l'utilisateur vers la page d'accueil ou autre
-        header("Location: ../../views/about.php");
-        exit();
+        
+        header("Location: ../../views/adminPannel.php");
+      
     } else {
-        // Informations de connexion incorrectes
+        
         echo 'Identifiants incorrects.';
     }
 }
