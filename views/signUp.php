@@ -12,6 +12,15 @@ require __DIR__ .'../../config/connection.php';
   <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
   <link rel="stylesheet" href="../assets/css/signUp.css" />
 </head>
+<style>
+                  .error{
+                    width: 100%;
+                    font-size: 15px;
+                    color:red ;
+                    font-family: Arial, Helvetica, sans-serif;
+                    display: none;
+                  }
+            </style>
 <body>
   <!-- Section: Design Block -->
 <section class="text-center text-lg-start">
@@ -31,21 +40,26 @@ require __DIR__ .'../../config/connection.php';
           
             <form action="../controllers/users/signUp.php" method="post">
                 <div class="form-outline mb-4">
-                <input type="text" id="form3Example3" class="form-control" name="fullname" />
-                <label class="form-label" for="form3Example3">Full name</label>
+                <label class="form-label d-flex flex-row" for="form3Example3">Full name</label>
+                <input type="text" id="name" class="form-control" name="fullname" />
+                <span class="error">invalid name</span>
+              
               </div>
             
 
               <!-- Email input -->
               <div class="form-outline mb-4">
-                <input type="email" id="form3Example3" class="form-control" name="email" />
-                <label class="form-label" for="form3Example3">Email address</label>
+              <label class="form-label d-flex flex-row" for="form3Example3">Email address</label>
+                <input type="email" id="email" class="form-control" name="email" />
+                <span class="error">invalid email</span>
+               
               </div>
 
               <!-- Password input -->
               <div class="form-outline mb-4">
-                <input type="password" id="form3Example4" class="form-control" name="password" />
-                <label class="form-label" for="form3Example4">Password</label>
+              <label class="form-label d-flex flex-row" for="form3Example4">Password</label>
+                <input type="password" id="password" class="form-control" name="password" />
+                <span class="error">invalid password</span>
               </div>
 
               <!-- Checkbox -->
@@ -60,6 +74,7 @@ require __DIR__ .'../../config/connection.php';
               <button type="submit" name="addUser" class="btn btn-primary btn-block mb-4">
                 Sign up
               </button>
+              <p>I have an account <a href="/Full_brief/views/login.php">Sign in</a></p>
             </form>
           </div>
         </div>
@@ -74,6 +89,7 @@ require __DIR__ .'../../config/connection.php';
   <!-- Jumbotron -->
 </section>
 <!-- Section: Design Block -->
-<script src="assets/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/js/signUp.js"></script>
 </body>
 </html>

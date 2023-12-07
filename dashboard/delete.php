@@ -1,24 +1,24 @@
 <?php
-    include "connection.php";
+     require __DIR__ .'../../config/connection.php';
         $id = $_GET['id'];
-        $query = "DELETE FROM `clients1` WHERE id = $id";
-        $result = mysqli_query($connection , $query);
+        $query = "DELETE FROM `user` WHERE id = $id";
+        $result = mysqli_query($connexion , $query);
         if(isset($result)){
-            header("location:index.php?msg=deleted database successfuly");
+            header("location:../views/adminPannel.php?msg=deleted database successfuly");
         }
         else{
             echo "error";
         }
 ?>
 <?php
-    include "connection.php";
-        $id = $_GET['id'];
-        $query = "DELETE FROM `project` WHERE id = $id";
-        $result = mysqli_query($connection , $query);
-        if(isset($result)){
-            header("location:project.php?msg=deleted database successfuly");
-        }
-        else{
-            echo "error";
-        }
-?>
+//     require __DIR__ .'../../config/connection.php';
+//         $id = $_GET['id'];
+//         $query = "DELETE FROM `project` WHERE id = $id";
+//         $result = mysqli_query($connexion , $query);
+//         if(isset($result)){
+//             header("location:project.php?msg=deleted database successfuly");
+//         }
+//         else{
+//             echo "error";
+//         }
+// ?>

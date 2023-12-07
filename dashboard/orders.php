@@ -1,8 +1,8 @@
-<?php include('header.php');
-    include "connection.php";
-    $query = "SELECT  name , email FROM `clients1`";
+<?php include('../includes/header.php');
+     require __DIR__ .'../../config/connection.php';
+    $query = "SELECT  name , email FROM `user`";
    
-    $result = mysqli_query($connection , $query);
+    $result = mysqli_query($connexion , $query);
 ?>
 
 <!DOCTYPE html>
@@ -80,22 +80,22 @@
   </table>
   <?php
 
-if(isset($_POST["submit1"])){
-    echo "dkhel";
-    $Name = $_POST["Name"];
+// if(isset($_POST["submit1"])){
+//     echo "dkhel";
+//     $Name = $_POST["Name"];
 
-    // $email = $_POST["email"];
-    // $Budget = $_POST["Budget"];
-    $requet = "INSERT INTO `confirmed`(`name`) VALUES ('$Name')";
-    $resultat = mysqli_query($connection,$requet);
-    if(isset($resultat)){
-        echo "dkhel";
-        header("location:Confirmed.php?msg=added to the database successfuly");
-    }
-    else{
-        echo "error";
-    }
-}
+//     // $email = $_POST["email"];
+//     // $Budget = $_POST["Budget"];
+//     $requet = "INSERT INTO `confirmed`(`name`) VALUES ('$Name')";
+//     $resultat = mysqli_query($connection,$requet);
+//     if(isset($resultat)){
+//         echo "dkhel";
+//         header("location:Confirmed.php?msg=added to the database successfuly");
+//     }
+//     else{
+//         echo "error";
+//     }
+// }
 
 ?>
 <form action="" method="post">

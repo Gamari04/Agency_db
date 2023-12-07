@@ -1,16 +1,18 @@
 
 <?php
-    include "connection.php";
+     require __DIR__ .'../../config/connection.php';
     $id = $_GET['id'];
 
     if(isset($_POST["submit"])){
-        $name = $_POST["name"];
-        $email = $_POST["email"];
-        $Budget = $_POST["Budget"];
-        $query = "UPDATE `clients1` SET `name`='$name',`email`='$email',`Budget`='$Budget' WHERE id = $id";
-        $result = mysqli_query($connection , $query);
+        $fullname = $_POST["fullname"];
+        $email    = $_POST["email"];
+        $role     = $_POST["role"];
+        $query    = "UPDATE `user` SET `fullname`='$fullname',`email`='$email',`role`='$role' WHERE id = $id";
+
+
+        $result = mysqli_query($connexion , $query);
         if(isset($result)){
-            header("location:index.php?msg=updated database successfuly");
+            header("location:../views/adminPannel.php?msg=updated database successfuly");
         }
         else{
             echo "error";
@@ -30,8 +32,8 @@
 </head>
 <body>
      <?php
-    $query = "SELECT * FROM `clients1` WHERE id = $id";
-    $result = mysqli_query($connection , $query);
+    $query = "SELECT * FROM `user` WHERE id = $id";
+    $result = mysqli_query($connexion , $query);
     $row = mysqli_fetch_assoc($result);
     ?>
     
@@ -41,7 +43,7 @@
   <form class="contactform" action="" method="post">
     <input  type="text" placeholder="Enter your name" name="name" value="<?php echo $row['name']?>">
     <input  type="text" placeholder="Enter your email " name="email" value="<?php echo $row['email']?>">
-    <input  type="number" placeholder="Enter your budget" name="Budget" value="<?php echo $row['budget']?>">
+    <input  type="text" placeholder="Enter a role" name="role" value="<?php echo $row['role']?>">
     <button class="button" type="submit" name="submit">
     <div class="text">
       <span>Submit</span>

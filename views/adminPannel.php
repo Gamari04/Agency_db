@@ -138,8 +138,8 @@ require __DIR__ .'../../config/connection.php';
         <td><?php echo $row['email']?></td>
         <td><?php echo $row['role']?></td>
         <!-- <td><button  class="btn btn-default"><a href="edit.php?id=<?= $row['id']?>">Edit</a></button></td> -->
-        <td><a class="btn btn-link text-dark px-3 mb-0" href="edit.php?id=<?= $row['id']?>"><i class="material-icons text-sm me-2">edit</i>Edit</a></td>
-        <td><button  class="btn btn-default"><a href="delete.php?id=<?= $row['id']?>"><lord-icon
+        <td><a class="btn btn-link text-dark px-3 mb-0" href="../dashboard/edit.php?id=<?= $row['id']?>"><i class="material-icons text-sm me-2">edit</i>Edit</a></td>
+        <td><button  class="btn btn-default"><a href="../dashboard/delete.php?id=<?= $row['id']?>"><lord-icon
     src="https://cdn.lordicon.com/skkahier.json"
     trigger="hover"
     style="width:30px;height:30px">

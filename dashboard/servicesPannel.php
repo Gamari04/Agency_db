@@ -1,20 +1,42 @@
-<?php include('header.php');?>
-<?php
-    include "connection.php";
-    $query = "SELECT * FROM `project`";
-    $result = mysqli_query($connection , $query);
+<?php include('../includes/header.php');
+    require __DIR__ .'../../config/connection.php';
+    $query = "SELECT * FROM `services`";
+    $result = mysqli_query($connexion , $query);
 ?>
 
 <div class="row">
         <div class="col-12">
           <div class="card my-4">
-            <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
-              <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
-                <h6 class="text-white text-capitalize ps-3">Projects table</h6>
-              </div>
+            <div class="card-header">
+              <!-- <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
+                <h6 class="text-white text-capitalize ps-3">Services table</h6>
+              </div> -->
             </div>
             <div class="card-body px-0 pb-2">
-              <div class="table-responsive p-0">
+              
+<?php
+              while($row = mysqli_fetch_assoc($result)){
+                ?>
+              <div class="col-sm-3">
+          <div class="card service_card">
+            <div class="card-body">
+              <!-- <img
+                src="../assets/img/programming 2.png"
+                alt="UX design"
+                class="m-auto d-block line_moving"
+              /> -->
+              <h4 class="card-title text-center">  <?php echo $row['name']?></h4>
+              <p class="card-text text-center">
+              <?php echo $row['description']?>
+              </p>
+              <h6>  <?php echo $row['price']?></h6>
+            </div>
+          </div>
+        </div>
+
+        <?php } ?>
+
+
                 <table class="table align-items-center justify-content-center mb-0">
                   <thead>
                     <tr>
@@ -238,7 +260,7 @@
                         </button>
                       </td>
                     </tr> -->
-                    <?php } ?>
+                    
                   </tbody>
                 </table>
               </div>
