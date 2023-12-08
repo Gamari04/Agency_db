@@ -88,9 +88,10 @@
     <section class="section_services">
       <h1 class="text-center mt-5">Services</h1>
       <img src="../assets/img/Line 4.png" alt="line" class="m-auto d-block " />
-
+      <a href="login.php">
       <div class="row mt-5 mx-5">
-        <div class="col-sm-3 mb-3 mb-sm-0 " onclick="signup($fullname,$email,$role, $password,$connexion)">
+        
+        <div class="col-sm-3 mb-3 mb-sm-0 ">
           <div class="card service_card">
             <div class="card-body">
               <img
@@ -106,6 +107,7 @@
             </div>
           </div>
         </div>
+     
         <div class="col-sm-3">
           <div class="card service_card">
             <div class="card-body">
@@ -155,6 +157,7 @@
           </div>
         </div>
       </div>
+      </a>
     </section>
 
     <section class="about_section container mb-5 mt-5">

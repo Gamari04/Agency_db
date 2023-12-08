@@ -1,8 +1,6 @@
 <?php include('../includes/header.php');
      require __DIR__ .'../../config/connection.php';
-    $query = "SELECT  name , email FROM `user`";
-   
-    $result = mysqli_query($connexion , $query);
+  
 ?>
 
 <!DOCTYPE html>
@@ -54,9 +52,8 @@
       </div>
       <div class="modal-body">
       <?php
-
-    $query = "SELECT name FROM `project`";
-    $result = mysqli_query($connection , $query);
+  $query = "SELECT  orders.id Num , user.fullname Client name FROM orders JOIN user ON orders.user_id = user.id" ;   
+  $result = mysqli_query($connexion , $query);
 ?>
 <table id="fresh-table" class="table">
     <thead>

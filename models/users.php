@@ -4,12 +4,16 @@
     
         function signup($fullname,$email,$role,$password,$connexion){
             
-            $query = "INSERT INTO `user`(`name`, `email`, `role`,`password`) VALUES ('$fullname','$email','$role','$password')";
-            $result = mysqli_query($connexion,$query);
+            $query = "INSERT INTO `user`(`name`, `email`, `role`, `password`) VALUES (?, ?, ?, ?)";
+            $stmt = mysqli_prepare($connexion, $query);
+            mysqli_stmt_bind_param($stmt, 'ssss', $fullname, $email, $role, $password);
+            $result = mysqli_stmt_execute($stmt);
+        
            
              return $result;
         } 
 
+        
 
        function login($email, $password, $connexion) {
     $query = "SELECT * FROM `user` WHERE email = '$email' LIMIT 1 ";
