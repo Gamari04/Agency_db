@@ -24,6 +24,7 @@ if ($user) {
     
     if ( $_SESSION['role'] == 'admin') {
         header("Location: ../../views/adminPannel.php");
+       
         exit();
     } else if ( $_SESSION['role'] == 'Client') {
         header("Location: ../../views/services.php");

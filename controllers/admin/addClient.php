@@ -11,7 +11,7 @@ if (isset($_POST["submit"])) {
     $result = addClient($connexion, $fullname, $email, $role);
 
     if ($result) {
-        header("location:../views/adminPannel.php?msg=added to the database successfully");
+        header("location:../../views/adminPannel.php?msg=added to the database successfully");
     } else {
         echo "error";
     }

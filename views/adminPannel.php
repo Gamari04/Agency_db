@@ -1,10 +1,17 @@
 
 
-<?php include(__DIR__ .'../../includes/header.php');?>
-<?php
+<?php 
+session_start();
+if(isset($_SESSION['role']) &&  $_SESSION['role']!='admin'){
+    header("Location: login.php");
+}
+include(__DIR__ .'../../includes/header.php');
+
 require __DIR__ .'../../config/connection.php';
     $query = "SELECT * FROM `user`";
     $result = mysqli_query($connexion , $query);
+  
+
 ?>
 <div class="container">
         <div class="row mt-4">
